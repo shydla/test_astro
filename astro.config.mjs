@@ -5,5 +5,13 @@ import netlify from '@astrojs/netlify';
 // https://astro.build/config
 export default defineConfig({
   output: 'server',
-  adapter: netlify()
+  adapter: netlify(),
+  vite: {
+    server: {
+      watch: {
+        usePolling: true,
+      },
+    },
+  },
+  integrations: [],
 });
